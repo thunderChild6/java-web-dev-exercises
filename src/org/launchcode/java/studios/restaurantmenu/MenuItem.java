@@ -19,6 +19,10 @@ public class MenuItem {
         this.newItem = newItem;
     }
 
+    public void printMenuItem() {
+        System.out.println(this.description);
+    }
+
     @Override
     public String toString() {
         return description + " $" + price;

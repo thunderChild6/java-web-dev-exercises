@@ -8,6 +8,7 @@ public class Menu {
     ArrayList<MenuItem> mains = new ArrayList<>();
     ArrayList<MenuItem> desserts = new ArrayList<>();
     ArrayList<MenuItem> newItems = new ArrayList<>();
+    ArrayList<MenuItem> extras = new ArrayList<>();
     public Date lastUpdated = new Date();
 
     public void addToListArray(MenuItem input) {
@@ -20,6 +21,33 @@ public class Menu {
             mains.add(input);
         } else if (input.category.equals("appetizer")) {
             appetizers.add(input);
+        } else {
+            extras.add(input);
         }
     }
+
+    public void removeFromListArray(MenuItem input) {
+        if (input.newItem.equals(true)) {
+            newItems.remove(input);
+        }
+        if (input.category.equals("dessert")) {
+            desserts.remove(input);
+        } else if (input.category.equals("mains")) {
+            mains.add(input);
+        } else if (input.category.equals("appetizer")) {
+            appetizers.add(input);
+        } else {
+            extras.add(input);
+        }
+    }
+
+    public void printWholeMenu() {
+        System.out.println("NEW!" + newItems);
+        System.out.println("Appetizers: " + appetizers);
+        System.out.println("Mains: " + mains);
+        System.out.println("Desserts: " + desserts);
+        System.out.println("Also try: " + extras);
+        System.out.println("Menu updated on " + lastUpdated);
+    }
+
 }
