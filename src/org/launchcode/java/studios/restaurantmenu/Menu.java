@@ -33,21 +33,24 @@ public class Menu {
         if (input.category.equals("dessert")) {
             desserts.remove(input);
         } else if (input.category.equals("mains")) {
-            mains.add(input);
+            mains.remove(input);
         } else if (input.category.equals("appetizer")) {
-            appetizers.add(input);
+            appetizers.remove(input);
         } else {
-            extras.add(input);
+            extras.remove(input);
         }
     }
 
     public void printWholeMenu() {
-        System.out.println("NEW!" + newItems);
-        System.out.println("Appetizers: " + appetizers);
-        System.out.println("Mains: " + mains);
-        System.out.println("Desserts: " + desserts);
-        System.out.println("Also try: " + extras);
+        if (newItems.size() != 0) {System.out.println("NEW!" + newItems);}
+        if (appetizers.size() != 0) {System.out.println("Appetizers: " + appetizers);}
+        if (mains.size() != 0) {System.out.println("Mains: " + mains);}
+        if (desserts.size() != 0) {System.out.println("Desserts: " + desserts);}
+        if (extras.size() != 0) {System.out.println("Also try: " + extras);}
         System.out.println("Menu updated on " + lastUpdated);
     }
 
+    public void printOneItem(MenuItem input) {
+        System.out.println(input);
+    }
 }
