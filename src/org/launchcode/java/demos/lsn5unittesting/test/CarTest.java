@@ -13,6 +13,7 @@ public class CarTest {
 
     @Before
     public void createCarObject() {
+
         test_car = new Car("Toytota", "Prius", 10, 50);
     }
 
